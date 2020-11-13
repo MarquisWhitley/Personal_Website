@@ -1,0 +1,140 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utilities */
+
+:root {
+  --standard-font: 'Source Code Pro', monospace;
+
+  --title-font: 'Underdog', cursive;
+
+  --primary-color: #f77c26;
+}
+
+body {
+  font-family: var(--standard-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--title-font);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+li {
+  color: var(--primary-color);
+}
+
+p {
+    font-size: 0.95rem;
+    color: black;
+}
+
+/* Miscellaneous */
+
+.special {
+    color: var(--primary-color);
+}
+
+/* Title */
+
+#heading {
+  position: absolute;
+  top: 3%;
+  left: 40%;
+  font-family: var(--title-font);
+  font-size: 1.5rem;
+}
+
+/* Containers */
+
+#main {
+  position: absolute;
+  height: 70vh;
+  width: 33vw;
+  background-color: transparent;
+  box-shadow: 3px 3px 30px 3px #000000;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  top: 14%;
+  left: 11%;
+}
+
+.section2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  top: 14%;
+  right: 11%;
+}
+
+/******************* About Me Section *******************/
+
+/* About Container */
+.container_about {
+  flex-grow: 5;
+}
+.section1_heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Skills Container */
+
+.container_skills {
+  flex-grow: 2;
+  width: 100%;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-around;
+}
+
+.languages_heading {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.tools_heading {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.section1_skills {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Resume Container */
+
+.container_resume {
+  flex-grow: 1;
+}
+
+.resume {
+  font-size: 1.5rem;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border-radius: 30px;
+}
