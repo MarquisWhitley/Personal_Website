@@ -22,7 +22,6 @@
     <title>Whitley Tech | Marquis Whitley</title>
   </head>
   <body>
-
     <!-- particles.js container -->
     <div id="particles-js"></div>
     <header id="heading">
@@ -51,6 +50,8 @@
           </p>
         </div>
       </div>
+
+      <div class="icons"></div>
 
       <!-- Skills Container -->
 
@@ -85,15 +86,12 @@
       <div class="container_resume">
         <a href="#" class="resume">Resume</a>
       </div>
-
     </div>
 
     <!-- Project Section -->
 
     <div id="main2" class="section2">
-      <h1 class="section2_heading">Projects</h1>
       <div id="projects">
-
         <!-- Design Patterns Project -->
 
         <div class="project">
@@ -140,7 +138,7 @@
           </div>
         </div>
 
-        <hr>
+        <hr />
         <!-- Github_Extension-Github_Search -->
 
         <div class="project">
@@ -190,7 +188,7 @@
           </div>
         </div>
 
-        <hr>
+        <hr />
         <!-- Thailand Resorts -->
 
         <div class="project">
@@ -240,7 +238,7 @@
           </div>
         </div>
 
-        <hr>
+        <hr />
         <!-- Todo App -->
 
         <div class="project">
@@ -294,7 +292,40 @@
 
     <!-- Contact Form -->
 
-    <div id="main3" class="contact"></div>
+    <div id="main3" class="contact">
+      <h1>Let's <span class="special">Connect</span></h1>
+      <form name="contact">
+        <div id="contact_form" class="name_container">
+          <label for="name">Name: </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name..."
+            class="contact_name"
+          />
+        </div>
+        <div id="contact_form" class="email_container">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email..."
+            class="contact_email"
+          />
+        </div>
+        <div id="contact_form" class="message_container">
+          <label for="description">Message: </label>
+          <textarea
+            name="description"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Enter message..."
+            class="contact_message"
+          ></textarea>
+        </div>
+      </form>
+    </div>
 
     <!-- Arrows -->
     <div class="right-arrow">
@@ -313,7 +344,6 @@
       <h3>Contact</h3>
       <i class="fas fa-arrow-alt-circle-left"></i>
     </div>
-    
 
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="/particles/main.js"></script>
