@@ -1,6 +1,8 @@
 /* Reset */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,6 +21,7 @@
 
 body {
   font-family: var(--standard-font);
+  overflow: hidden;
 }
 
 h1,
@@ -58,6 +61,7 @@ p {
   left: 40%;
   font-family: var(--title-font);
   font-size: 1.5rem;
+  transition: 900ms ease-in;
 }
 
 /* Containers */
@@ -74,8 +78,18 @@ p {
 
 #main2 {
   position: absolute;
-  height: 85vh;
-  width: 40vw;
+  height: 92vh;
+  width: 45vw;
+  background-color: transparent;
+  box-shadow: 3px 3px 30px 3px #000000;
+  border-radius: 10px;
+  padding: 0px 40px 40px 40px;
+}
+
+#main3 {
+  position: absolute;
+  height: 70vh;
+  width: 33vw;
   background-color: transparent;
   box-shadow: 3px 3px 30px 3px #000000;
   border-radius: 10px;
@@ -90,7 +104,8 @@ p {
   align-items: center;
   flex-direction: column;
   top: 14%;
-  left: 11%;
+  left: 33%;
+  transition: 900ms ease-in;
 }
 
 /* About Container */
@@ -162,8 +177,9 @@ p {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  top: 10%;
-  right: 11%;
+  top: 3%;
+  right: -100%;
+  transition: 900ms ease-in;
 }
 
 .section2_heading {
@@ -193,22 +209,222 @@ p {
 }
 
 .project_info-container {
-    flex-grow: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .project_info-heading {
-    margin-top: 10px;
+  margin-top: 10px;
   text-align: center;
 }
 
 .project_info ul li p {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 img {
   height: 100%;
   border-radius: 10px;
+}
+
+/* Project hover */
+
+.contianer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  width: 18vw;
+  position: relative;
+  height: 100%;
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  opacity: 1;
+  transition: transform ease-out 250ms;
+}
+
+.card::before {
+  top: 1em;
+  left: 1em;
+  right: 1em;
+  border-top: 3px solid var(--primary-color);
+  transform: scale(0, 1);
+  transform-origin: left;
+}
+
+.card::after {
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+  border-bottom: 3px solid var(--primary-color);
+  transform: scale(0, 1);
+  transform-origin: right;
+}
+
+.card:hover::before,
+.card:hover::after {
+  transform: scale(1, 1);
+}
+
+.card__img {
+  width: 100%;
+  display: block;
+  transition: opacity ease-out 250ms;
+}
+
+.card:hover .card__img {
+  opacity: 0.4;
+}
+
+.card__text {
+  position: absolute;
+  padding: 0 1em;
+  color: #fff;
+  opacity: 0;
+  transition: opacity ease-out 250ms;
+
+  top: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card:hover .card__text {
+  opacity: 1;
+}
+
+.card__title {
+  font-size: 2rem;
+}
+.card__body {
+  font-size: 2rem;
+}
+
+.line {
+  background-color: var(--primary-color);
+  height: 80%;
+  width: 5px;
+}
+
+.fas {
+  color: var(--primary-color);
+}
+
+/************************ Contact Section ***********************/
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 14%;
+  left: -100%;
+  transition: 900ms ease-in;
+}
+
+
+/******************** Arrows ********************/
+
+/* Right Arrow */
+
+.right-arrow {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  right: 2.5%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 900ms ease-in;
+  opacity: 1;
+}
+
+.right-arrow h3 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.right-arrow2 {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  right: 2.5%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 900ms ease-in;
+  opacity: 1;
+}
+
+.right-arrow2 h3 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.clicked {
+  transition: opacity 900ms ease-in-out;
+  opacity: 0;
+}
+
+.fa-arrow-alt-circle-right:hover {
+  transition: all 500ms ease-in-out;
+  color: #ff6600;
+}
+
+/* Left Arrow */
+
+.left-arrow {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 2.5%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 900ms ease-in;
+}
+
+.left-arrow h3 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+
+.fa-arrow-alt-circle-left:hover {
+  transition: all 500ms ease-in-out;
+  color: #ff6600;
+}
+
+.left-arrow2 {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 2.5%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 900ms ease-in;
+}
+
+.left-arrow2 h3 {
+  font-size: 1.2rem;
+  text-align: center;
 }
