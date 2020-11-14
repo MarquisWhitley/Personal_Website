@@ -7,7 +7,10 @@ const contact = document.querySelector('.contact')
 const leftArrow2 = document.querySelector('.left-arrow2');
 const rightArrow2 = document.querySelector('.right-arrow2');
 
-console.log(contact)
+const rec = projects.getBoundingClientRect();
+const rec2 = aboutMe.getBoundingClientRect();
+console.log(`top: ${rec2.top} left: ${rec2.left} bottom: ${rec2.bottom} right: ${rec2.right}`)
+console.log(`top: ${rec.top} left: ${rec.left} bottom: ${rec.bottom} right: ${rec.right}`)
 
 rightArrow.addEventListener('click', () => arrowRight());
 rightArrow2.addEventListener('click', () => arrowRight2());
@@ -37,7 +40,7 @@ const arrowRight2 = async () => {
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   rightArrow2.style.visibility = 'hidden';
   contact.style.left = '-100%'
-  aboutMe.style.left = '33%';
+  aboutMe.style.left = '32%';
   heading.style.left = '40%';
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   rightArrow.classList.remove('clicked');
@@ -51,7 +54,7 @@ const arrowLeft = async () => {
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   leftArrow.style.visibility = 'hidden';
   projects.style.right = '-101%';
-  aboutMe.style.left = '33%';
+  aboutMe.style.left = '32%';
   heading.style.left = '40%';
   await new Promise((resolve, reject) => setTimeout(resolve, 900));
   leftArrow2.classList.remove('clicked');

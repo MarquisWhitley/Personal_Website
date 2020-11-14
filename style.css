@@ -45,7 +45,7 @@ li {
 }
 
 p {
-  font-size: 1rem;
+  font-size: calc(.75vw + .35rem);
   color: rgb(0, 0, 0);
 }
 
@@ -62,7 +62,7 @@ p {
   top: 3%;
   left: 40%;
   font-family: var(--title-font);
-  font-size: 1.5rem;
+  font-size: calc(1vw + .5rem);
   transition: 900ms ease-in;
 }
 
@@ -70,8 +70,8 @@ p {
 
 #main {
   position: absolute;
-  height: 70vh;
-  width: 33vw;
+  height: 75vh;
+  width: 40vw;
   background-color: transparent;
   padding: 40px;
 }
@@ -100,23 +100,35 @@ p {
   align-items: center;
   flex-direction: column;
   top: 14%;
-  left: 33%;
+  left: 32%;
   transition: 900ms ease-in;
 }
 
 /* About Container */
-.container_about {
-  flex-grow: 5;
-}
+
 .section1_heading {
   text-align: center;
   margin-bottom: 20px;
+  font-size: calc(1vw + .6rem);
 }
 
+.icons {
+  margin: 15px 0px 15px 0;
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.icons a {
+  font-size: calc(1vw + 15px);
+}
+
+.fab {
+  color: #f77c26;
+}
 
 .picture {
-  height: 175px;
-  width: 175px;
+  height: calc(5vw + 2rem);
+  width: calc(5vw + 2rem);
   border-radius: 50%;
   background-image: url('./images/WebsiteSample.jpg');
   background-position: center;
@@ -130,7 +142,6 @@ p {
 /* Skills Container */
 
 .container_skills {
-  flex-grow: 2;
   width: 100%;
 }
 
@@ -141,27 +152,25 @@ p {
 
 .languages_heading {
   margin-bottom: 10px;
-  font-size: 1.1rem;
+  font-size: calc(1vw + .6rem);
 }
 
 .tools_heading {
-  font-size: 1.1rem;
+  font-size: calc(1vw + .6rem);
   margin-bottom: 10px;
 }
 
 .section1_skills {
   text-align: center;
   margin-bottom: 20px;
+  font-size:calc(1vw + .6rem);
 }
 
 /* Resume Container */
 
-.container_resume {
-  flex-grow: 1;
-}
 
 .resume {
-  font-size: 1.25rem;
+  font-size: calc(.70vw + .65rem);
   padding: 10px;
   background-color: var(--primary-color);
   border-radius: 30px;
@@ -482,4 +491,26 @@ label {
 .left-arrow2 h3 {
   font-size: 1.2rem;
   text-align: center;
+}
+
+
+
+/*********************** Media Queries ***************/
+
+@media screen and (max-width: 750px) {
+  .picture {
+    display: none;
+  }
+  #main {
+    width: 65vw;
+  }
+  .section1 {
+    left: 20%;
+  }
+  .left-arrow, .left-arrow2, .right-arrow2, .right-arrow {
+    font-size: 1.5rem;
+  }
+  .right-arrow h3, .left-arrow2 h3, .left-arrow h3, .right-arrow2 h3 {
+    font-size: .75rem;
+  }
 }
