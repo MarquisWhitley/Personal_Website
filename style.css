@@ -1,6 +1,6 @@
 /* Reset */
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -188,7 +188,8 @@ p {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 0px 10px 0 30px;
+  margin: 2px;
+  padding: 0px 15px 0 30px;
 }
 
 .project_info-container {
@@ -199,6 +200,7 @@ p {
 }
 
 .project_info-heading {
+    margin-top: 10px;
   text-align: center;
 }
 
