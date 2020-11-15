@@ -59,8 +59,8 @@ p {
 
 #heading {
   position: absolute;
-  top: 3%;
-  left: 40%;
+  top: 2%;
+  left: 38%;
   font-family: var(--title-font);
   font-size: calc(1vw + 0.5rem);
   transition: 900ms ease-in;
@@ -79,7 +79,14 @@ p {
 #main2 {
   position: absolute;
   height: 92vh;
-  width: 50vw;
+  width: 60vw;
+  background-color: transparent;
+  padding: 0px 40px 40px 40px;
+}
+#main4 {
+  position: absolute;
+  height: 92vh;
+  width: 60vw;
   background-color: transparent;
   padding: 0px 40px 40px 40px;
 }
@@ -96,11 +103,11 @@ p {
 
 .section1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  top: 14%;
-  left: 32%;
+  top: 10%;
+  left: 27%;
   transition: 900ms ease-in;
 }
 
@@ -187,17 +194,29 @@ p {
   transition: 900ms ease-in;
 }
 
+.section4 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  top: 3%;
+  right: -100%;
+  transition: 900ms ease-in;
+}
+
 #projects {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 100%;
 }
 
 .project {
-  height: 170px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 10px;
 }
 
@@ -206,7 +225,7 @@ p {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 2px;
+  margin: 30px;
   padding: 0px 15px 0 30px;
 }
 
@@ -473,6 +492,25 @@ label {
   font-size: 1.2rem;
   text-align: center;
 }
+.right-arrow3 {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  right: 2.5%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 900ms ease-in;
+  opacity: 1;
+  visibility: hidden;
+}
+
+.right-arrow3 h3 {
+  font-size: 1.2rem;
+  text-align: center;
+}
 
 .clicked {
   transition: opacity 900ms ease-in-out;
@@ -543,13 +581,31 @@ label {
   .left-arrow,
   .left-arrow2,
   .right-arrow2,
+  .right-arrow3,
   .right-arrow {
     font-size: 1.5rem;
   }
   .right-arrow h3,
   .left-arrow2 h3,
   .left-arrow h3,
-  .right-arrow2 h3 {
+  .right-arrow2 h3,
+  .right-arrow3 h3 {
     font-size: 0.75rem;
+  }
+
+  .project {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .project_info-container {
+    display: none;
+  }
+
+  .card {
+    width: 200px;
   }
 }
