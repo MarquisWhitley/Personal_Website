@@ -3,14 +3,16 @@ const leftArrow = document.querySelector('.left-arrow');
 const projects = document.querySelector('.section2');
 const aboutMe = document.querySelector('.section1');
 const heading = document.querySelector('#heading');
-const contact = document.querySelector('.contact')
+const contact = document.querySelector('.contact');
 const leftArrow2 = document.querySelector('.left-arrow2');
 const rightArrow2 = document.querySelector('.right-arrow2');
+const submit = document.querySelector('.form-submitted');
+const name = document.querySelector('.contact_name');
+const email = document.querySelector('.contact_email');
+const message = document.querySelector('.contact_message');
 
-const rec = projects.getBoundingClientRect();
-const rec2 = aboutMe.getBoundingClientRect();
-console.log(`top: ${rec2.top} left: ${rec2.left} bottom: ${rec2.bottom} right: ${rec2.right}`)
-console.log(`top: ${rec.top} left: ${rec.left} bottom: ${rec.bottom} right: ${rec.right}`)
+const form = document.querySelector('.contact_form');
+form.addEventListener('submit', (e) => submitForm(e));
 
 rightArrow.addEventListener('click', () => arrowRight());
 rightArrow2.addEventListener('click', () => arrowRight2());
@@ -39,7 +41,7 @@ const arrowRight2 = async () => {
   rightArrow2.classList.add('clicked');
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   rightArrow2.style.visibility = 'hidden';
-  contact.style.left = '-100%'
+  contact.style.left = '-100%';
   aboutMe.style.left = '32%';
   heading.style.left = '40%';
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
@@ -69,10 +71,42 @@ const arrowLeft2 = async () => {
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   rightArrow.style.visibility = 'hidden';
   leftArrow2.style.visibility = 'hidden';
-  contact.style.left = '33%'
+  contact.style.left = '33%';
   aboutMe.style.left = '200%';
   heading.style.left = '200%';
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   rightArrow2.classList.remove('clicked');
   rightArrow2.style.visibility = 'visible';
+};
+
+const submitForm = async (e) => {
+  e.preventDefault();
+
+  if (name.value.length === 0) {
+    alert('Please enter your name.');
+    return;
+  }
+  if (email.value.length === 0) {
+    alert('Please enter your email.');
+    return;
+  }
+  if (message.value.length === 0) {
+    alert('Please enter a message.');
+    return;
+  }
+  console.log(e.target[0].value);
+  console.log('submit');
+  contact.classList.add('clicked');
+  await new Promise((resolve, reject) => setTimeout(resolve, 200));
+  contact.style.visibility = 'hidden';
+  submit.classList.remove('clicked');
+  await new Promise((resolve, reject) => setTimeout(resolve, 200));
+  submit.style.visibility = 'visible';
+  await new Promise((resolve, reject) => setTimeout(resolve, 5000));
+  submit.classList.add('clicked');
+  await new Promise((resolve, reject) => setTimeout(resolve, 200));
+  submit.style.visibility = 'hidden';
+  await new Promise((resolve, reject) => setTimeout(resolve, 200));
+  contact.classList.remove('clicked');
+  contact.style.visibility = 'visible';
 };
