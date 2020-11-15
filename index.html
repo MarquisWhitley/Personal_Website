@@ -309,7 +309,12 @@
 
     <div id="main3" class="contact">
       <h1>Let's <span class="special">Connect</span></h1>
-      <form name="contact" class="contact_form" netlify>
+      <form
+        name="contact"
+        class="contact_form"
+        action="POST"
+        data-netlify="true"
+      >
         <div id="contact_form" class="name_container">
           <label for="name">Name: </label>
           <input
@@ -366,7 +371,7 @@
       <i class="fas fa-arrow-alt-circle-left"></i>
     </div>
 
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="/particles/main.js"></script>
     <script src="main.js"></script>
   </body>
