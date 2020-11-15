@@ -70,8 +70,8 @@ p {
 
 #main {
   position: absolute;
-  height: 75vh;
-  width: 40vw;
+  height: 87vh;
+  width: 45vw;
   background-color: transparent;
   padding: 40px;
 }
@@ -466,6 +466,7 @@ label {
   align-items: center;
   transition: opacity 900ms ease-in;
   opacity: 1;
+  visibility: hidden;
 }
 
 .right-arrow2 h3 {
@@ -496,6 +497,7 @@ label {
   justify-content: center;
   align-items: center;
   transition: opacity 900ms ease-in;
+  visibility: hidden;
 }
 
 .left-arrow h3 {

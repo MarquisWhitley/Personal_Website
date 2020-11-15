@@ -18,10 +18,6 @@ rightArrow.addEventListener('click', () => arrowRight());
 rightArrow2.addEventListener('click', () => arrowRight2());
 leftArrow.addEventListener('click', () => arrowLeft());
 leftArrow2.addEventListener('click', () => arrowLeft2());
-leftArrow.style.visibility = 'hidden';
-leftArrow.classList.add('clicked');
-rightArrow2.style.visibility = 'hidden';
-rightArrow2.classList.add('clicked');
 
 const arrowRight = async () => {
   rightArrow.classList.add('clicked');
@@ -80,7 +76,7 @@ const arrowLeft2 = async () => {
 };
 
 const submitForm = async (e) => {
-
+  e.preventDefault();
   if (name.value.length === 0) {
     alert('Please enter your name.');
     return;
