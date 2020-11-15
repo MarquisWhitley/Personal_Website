@@ -80,7 +80,6 @@ const arrowLeft2 = async () => {
 };
 
 const submitForm = async (e) => {
-  e.preventDefault();
 
   if (name.value.length === 0) {
     alert('Please enter your name.');
