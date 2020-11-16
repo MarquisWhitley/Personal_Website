@@ -20,6 +20,14 @@ rightArrow3.addEventListener('click', () => arrowRight3());
 leftArrow.addEventListener('click', () => arrowLeft());
 leftArrow2.addEventListener('click', () => arrowLeft2());
 
+let currentHeading = 38;
+let currentAboutMeL = 25;
+
+if (document.body.clientWidth < 500) {
+  currentHeading = 30;
+  currentAboutMeL = 19;
+}
+
 const arrowRight = async () => {
   rightArrow.classList.add('clicked');
   leftArrow2.classList.add('clicked');
@@ -41,8 +49,8 @@ const arrowRight2 = async () => {
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   rightArrow2.style.visibility = 'hidden';
   contact.style.left = '-100%';
-  aboutMe.style.left = '25%';
-  heading.style.left = '38%';
+  aboutMe.style.left = `${currentAboutMeL}%`;
+  heading.style.left = `${currentHeading}%`;
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   rightArrow.classList.remove('clicked');
   rightArrow.style.visibility = 'visible';
@@ -71,8 +79,8 @@ const arrowLeft = async () => {
   rightArrow3.style.visibility = 'hidden';
   projects.style.right = '-100%';
   more.style.right = '-100%';
-  aboutMe.style.left = '25%';
-  heading.style.left = '38%';
+  aboutMe.style.left = `${currentAboutMeL}%`;
+  heading.style.left = `${currentHeading}%`;
   await new Promise((resolve, reject) => setTimeout(resolve, 900));
   leftArrow2.classList.remove('clicked');
   leftArrow2.style.visibility = 'visible';
@@ -87,7 +95,7 @@ const arrowLeft2 = async () => {
   rightArrow.style.visibility = 'hidden';
   leftArrow2.style.visibility = 'hidden';
   if (document.body.clientWidth < 600) {
-    contact.style.left = '19%';
+    contact.style.left = '10%';
   } else {
     contact.style.left = '27%';
   }
