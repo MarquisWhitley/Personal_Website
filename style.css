@@ -228,6 +228,9 @@ i {
   padding: 0px 15px 0 30px;
 }
 
+.project_info-container h3 {
+  font-size: calc(.6vw + 0.66rem);
+}
 .project_info-container {
   flex-grow: 2;
   display: flex;
@@ -238,10 +241,11 @@ i {
 .project_info-heading {
   margin-top: 10px;
   text-align: center;
+  font-size: calc(.8vw + 0.66rem);
 }
 
 .project_info ul li p {
-  font-size: 0.9rem;
+  font-size: calc(.6vw + 0.66rem);
 }
 
 img {
