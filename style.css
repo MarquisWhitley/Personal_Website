@@ -93,10 +93,9 @@ p {
 
 #main3 {
   position: absolute;
-  height: 70vh;
-  width: 33vw;
+  height: calc(67vh + 0.8rem);
+  width: calc(28vw + 11rem);
   background-color: transparent;
-  padding: 40px;
 }
 
 /******************* About Me Section *******************/
@@ -107,7 +106,7 @@ p {
   align-items: center;
   flex-direction: column;
   top: 10%;
-  left: 27%;
+  left: 26%;
   transition: 900ms ease-in;
 }
 
@@ -129,7 +128,7 @@ p {
   font-size: calc(1vw + 15px);
 }
 
-.fab {
+i {
   color: #f77c26;
 }
 
@@ -221,11 +220,11 @@ p {
 }
 
 .project_info {
-  flex-grow: 10;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 30px;
+  margin: 0 30px;
   padding: 0px 15px 0 30px;
 }
 
@@ -382,7 +381,7 @@ form {
 
 label {
   font-family: var(--title-font);
-  font-size: 1.3rem;
+  font-size: calc(0.8rem + 0.3rem);
 }
 
 #contact_form {
@@ -390,27 +389,15 @@ label {
   flex-direction: column;
 }
 
-.contact_email {
-  height: 25px;
-  margin-top: 5px;
-  border: none;
-  border-bottom: solid 2px var(--primary-color);
-  font-size: 1.2rem;
-}
-.contact_email:focus {
-  outline: none;
-  background-color: var(--primary-color-o);
-}
-
+.contact_email,
 .contact_name {
   height: 25px;
   margin-top: 5px;
   border: none;
   border-bottom: solid 2px var(--primary-color);
-
   font-size: 1.2rem;
 }
-
+.contact_email:focus,
 .contact_name:focus {
   outline: none;
   background-color: var(--primary-color-o);
@@ -427,87 +414,33 @@ label {
   background-color: var(--primary-color-o);
 }
 
-/* Form Submitted */
-
-.form-submitted {
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  width: 20vw;
-  height: 15vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  background-color: transparent;
-  border-radius: 20px;
-  box-shadow: 5px 5px 30px 5px #000000;
-  visibility: hidden;
-  transition: 900ms ease-in;
-}
-
-.fa-check {
-  font-size: 1.5rem;
-}
-
 /******************** Arrows ********************/
-
-/* Right Arrow */
-
-.right-arrow {
+.right-arrow,
+.right-arrow3,
+.right-arrow2,
+.left-arrow,
+.left-arrow2 {
   font-size: 3rem;
   position: absolute;
-  top: 50%;
-  right: 2.5%;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: opacity 900ms ease-in;
-  opacity: 1;
 }
 
-.right-arrow h3 {
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.right-arrow2 {
-  font-size: 3rem;
-  position: absolute;
-  top: 50%;
-  right: 2.5%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 900ms ease-in;
-  opacity: 1;
+.right-arrow2,
+.right-arrow3,
+.left-arrow {
   visibility: hidden;
 }
 
-.right-arrow2 h3 {
-  font-size: 1.2rem;
-  text-align: center;
-}
-.right-arrow3 {
-  font-size: 3rem;
-  position: absolute;
-  top: 50%;
-  right: 2.5%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 900ms ease-in;
-  opacity: 1;
-  visibility: hidden;
-}
-
-.right-arrow3 h3 {
+.right-arrow h3,
+.right-arrow2 h3,
+.right-arrow3 h3,
+.left-arrow h3,
+.left-arrow2 h3 {
   font-size: 1.2rem;
   text-align: center;
 }
@@ -517,53 +450,27 @@ label {
   opacity: 0;
 }
 
-.fa-arrow-alt-circle-right:hover {
-  transition: all 500ms ease-in-out;
-  color: #ff6600;
-}
-
-/* Left Arrow */
-
-.left-arrow {
-  font-size: 3rem;
-  position: absolute;
-  top: 50%;
-  left: 2.5%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 900ms ease-in;
-  visibility: hidden;
-}
-
-.left-arrow h3 {
-  font-size: 1.2rem;
-  text-align: center;
-}
-
+.fa-arrow-alt-circle-right:hover,
 .fa-arrow-alt-circle-left:hover {
   transition: all 500ms ease-in-out;
   color: #ff6600;
 }
 
-.left-arrow2 {
-  font-size: 3rem;
-  position: absolute;
+/* Right Arrow */
+
+.right-arrow,
+.right-arrow3,
+.right-arrow2 {
   top: 50%;
-  left: 2.5%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 900ms ease-in;
+  right: 2%;
 }
 
-.left-arrow2 h3 {
-  font-size: 1.2rem;
-  text-align: center;
+/* Left Arrow */
+
+.left-arrow,
+.left-arrow2 {
+  top: 50%;
+  left: 2%;
 }
 
 /*********************** Media Queries ***************/
@@ -576,7 +483,7 @@ label {
     width: 65vw;
   }
   .section1 {
-    left: 20%;
+    left: 23%;
   }
   .left-arrow,
   .left-arrow2,

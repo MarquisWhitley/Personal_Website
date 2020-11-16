@@ -9,14 +9,10 @@ const leftArrow2 = document.querySelector('.left-arrow2');
 const rightArrow2 = document.querySelector('.right-arrow2');
 const rightArrow3 = document.querySelector('.right-arrow3');
 const submit = document.querySelector('.form-submitted');
-const name = document.querySelector('.contact_name');
-const email = document.querySelector('.contact_email');
 const message = document.querySelector('.contact_message');
 
-console.log(more);
-
 const form = document.querySelector('.contact_form');
-form.addEventListener('submit', () => submitForm());
+form.addEventListener('submit', (e) => submitForm(e));
 
 rightArrow.addEventListener('click', () => arrowRight());
 rightArrow2.addEventListener('click', () => arrowRight2());
@@ -90,7 +86,11 @@ const arrowLeft2 = async () => {
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
   rightArrow.style.visibility = 'hidden';
   leftArrow2.style.visibility = 'hidden';
-  contact.style.left = '33%';
+  if (document.body.clientWidth < 600) {
+    contact.style.left = '19%';
+  } else {
+    contact.style.left = '27%';
+  }
   aboutMe.style.left = '200%';
   heading.style.left = '200%';
   await new Promise((resolve, reject) => setTimeout(resolve, 500));
@@ -98,16 +98,21 @@ const arrowLeft2 = async () => {
   rightArrow2.style.visibility = 'visible';
 };
 
-const submitForm = async () => {
+const submitForm = async (e) => {
+  const name = document.querySelector('.contact_name');
+  const email = document.querySelector('.contact_email');
   if (name.value.length === 0) {
+    e.preventDefault();
     alert('Please enter your name.');
     return;
   }
   if (email.value.length === 0) {
+    e.preventDefault();
     alert('Please enter your email.');
     return;
   }
   if (message.value.length === 0) {
+    e.preventDefault();
     alert('Please enter a message.');
     return;
   }
