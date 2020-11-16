@@ -526,7 +526,7 @@ label {
   #heading {
     position: absolute;
     top: 2%;
-    left: 30%;
+    left: 28%;
     font-family: var(--title-font);
     font-size: calc(1vw + 0.5rem);
     transition: 900ms ease-in;

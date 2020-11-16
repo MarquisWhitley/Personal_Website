@@ -24,7 +24,7 @@ let currentHeading = 38;
 let currentAboutMeL = 25;
 
 if (document.body.clientWidth < 500) {
-  currentHeading = 30;
+  currentHeading = 28;
   currentAboutMeL = 19;
 }
 
