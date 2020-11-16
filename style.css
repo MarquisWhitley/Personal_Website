@@ -21,9 +21,12 @@
   --primary-color-o: #f77d2641;
 }
 
+html,
 body {
-  font-family: var(--standard-font);
+  margin: 0;
+  height: 100%;
   overflow: hidden;
+  font-family: var(--standard-font);
 }
 
 h1,
@@ -58,7 +61,7 @@ p {
 /* Title */
 
 #heading {
-  position: absolute;
+  position: fixed;
   top: 2%;
   left: 38%;
   font-family: var(--title-font);
@@ -69,7 +72,7 @@ p {
 /* Containers */
 
 #main {
-  position: absolute;
+  position: fixed;
   height: 85vh;
   width: 45vw;
   background-color: transparent;
@@ -77,14 +80,14 @@ p {
 }
 
 #main2 {
-  position: absolute;
+  position: fixed;
   height: 92vh;
   width: 60vw;
   background-color: transparent;
   padding: 0px 40px 40px 40px;
 }
 #main4 {
-  position: absolute;
+  position: fixed;
   height: 92vh;
   width: 60vw;
   background-color: transparent;
@@ -524,7 +527,7 @@ label {
 
 @media screen and (max-width: 500px) {
   #heading {
-    position: absolute;
+    position: fixed;
     top: 2%;
     left: 28%;
     font-family: var(--title-font);
