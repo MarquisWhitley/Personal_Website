@@ -20,8 +20,8 @@ rightArrow3.addEventListener('click', () => arrowRight3());
 leftArrow.addEventListener('click', () => arrowLeft());
 leftArrow2.addEventListener('click', () => arrowLeft2());
 
-let currentHeading = 38;
-let currentAboutMeL = 25;
+let currentHeading = 40;
+let currentAboutMeL = 28;
 
 if (document.body.clientWidth < 500) {
   currentHeading = 28;
