@@ -12,9 +12,9 @@
 
   --title-font: 'Underdog', cursive;
 
-  --primary-color: #f77c26;
+  --primary-color: #2bae66ff;
 
-  --primary-color-o: #f77d2641;
+  --primary-color-o: rgba(43, 174, 102, 0.329);
 }
 html,
 body {
@@ -78,7 +78,7 @@ p {
 }
 #main3 {
   position: absolute;
-  height: calc(67vh + 0.8rem);
+  height: calc(74vh + 0.8rem);
   width: calc(28vw + 11rem);
   background-color: transparent;
 }
@@ -108,7 +108,7 @@ p {
   font-size: calc(1vw + 15px);
 }
 i {
-  color: #f77c26;
+  color: var(--primary-color);
 }
 .picture {
   height: calc(5vw + 2rem);
@@ -295,7 +295,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  top: 12%;
+  top: 10%;
   left: -100%;
   transition: 900ms ease-in;
   padding: 40px;
@@ -320,7 +320,7 @@ form {
   border-radius: 10px;
 }
 .form-btn:hover {
-  background-color: #ff7e22b0;
+  background-color: var(--primary-color-o);
 }
 label {
   font-family: var(--title-font);
@@ -337,6 +337,7 @@ label {
   border: none;
   border-bottom: solid 2px var(--primary-color);
   font-size: calc(0.66vw + 0.66rem);
+  background-color: transparent;
 }
 .contact_email:focus,
 .contact_name:focus {
@@ -347,9 +348,10 @@ label {
   border: none;
   border: 2px solid var(--primary-color);
   font-size: calc(0.66vw + 0.66rem);
+  background-color: transparent;
 }
 .contact_message:focus {
-  outline: solid 2px red;
+  outline: solid 2px rgb(19, 255, 145);
   background-color: var(--primary-color-o);
 }
 /******************** Arrows ********************/
@@ -387,7 +389,7 @@ label {
 .fa-arrow-alt-circle-right:hover,
 .fa-arrow-alt-circle-left:hover {
   transition: all 500ms ease-in-out;
-  color: #ff6600;
+  color: var(--primary-color);
 }
 /* Right Arrow */
 .right-arrow,
@@ -402,7 +404,6 @@ label {
   top: 50%;
   left: 2%;
 }
-/*********************** Media Queries ***************/
 @media screen and (max-width: 750px) {
   .picture {
     display: none;
