@@ -78,7 +78,7 @@ const arrowLeft = async () => {
   leftArrow.style.visibility = 'hidden';
   rightArrow3.style.visibility = 'hidden';
   projects.style.right = '-100%';
-  more.style.right = '-100%';
+  more.style.right = '-200%';
   aboutMe.style.left = `${currentAboutMeL}%`;
   heading.style.left = `${currentHeading}%`;
   await new Promise((resolve, reject) => setTimeout(resolve, 900));
