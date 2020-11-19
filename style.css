@@ -32,7 +32,7 @@ a {
   color: rgb(0, 0, 0);
 }
 li {
-  color: var(--primary-color);
+  font-size: calc(0.75vw + 0.35rem);
 }
 p {
   font-size: calc(0.75vw + 0.35rem);
@@ -212,6 +212,12 @@ img {
   height: 100%;
   border-radius: 10px;
 }
+.project_list{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
+}
 /* Project hover */
 .contianer {
   height: 100%;
@@ -374,11 +380,11 @@ label {
 .left-arrow {
   visibility: hidden;
 }
-.right-arrow h3,
-.right-arrow2 h3,
-.right-arrow3 h3,
-.left-arrow h3,
-.left-arrow2 h3 {
+.right-arrow h2,
+.right-arrow2 h2,
+.right-arrow3 h2,
+.left-arrow h2,
+.left-arrow2 h2 {
   font-size: 1.2rem;
   text-align: center;
 }
@@ -421,11 +427,11 @@ label {
   .right-arrow {
     font-size: 1.5rem;
   }
-  .right-arrow h3,
-  .left-arrow2 h3,
-  .left-arrow h3,
-  .right-arrow2 h3,
-  .right-arrow3 h3 {
+  .right-arrow h2,
+  .left-arrow2 h2,
+  .left-arrow h2,
+  .right-arrow2 h2,
+  .right-arrow3 h2 {
     font-size: 0.75rem;
   }
   .project {
