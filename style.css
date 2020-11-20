@@ -416,7 +416,7 @@ label {
   left: 2%;
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 675px) {
   .icons {
     display: none;
   }
