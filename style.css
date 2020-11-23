@@ -98,6 +98,9 @@ hr {
   margin-bottom: 20px;
   font-size: calc(1vw + 0.6rem);
 }
+.section1_about-content {
+  padding: 30px;
+}
 .icons {
   margin: 15px 0px 15px 0;
   display: flex;
