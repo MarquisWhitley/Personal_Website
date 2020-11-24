@@ -147,7 +147,7 @@ i:hover {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  top: 1%;
+  top: 0;
   right: -100%;
   transition: 900ms ease-in;
 }
@@ -156,7 +156,7 @@ i:hover {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  top: 3%;
+  top: 0;
   right: -100%;
   transition: 900ms ease-in;
 }
