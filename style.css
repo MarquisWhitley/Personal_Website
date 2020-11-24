@@ -141,7 +141,6 @@ i:hover {
   margin-bottom: 20px;
   font-size: calc(1vw + 0.6rem);
 }
-/* Resume Container */
 /********************* Projects Sections ********************/
 .section2 {
   display: flex;
@@ -469,7 +468,7 @@ label {
     rgba(0, 0, 0, 0) 3%,
     rgba(43, 174, 96, 1) 100%
   );
-  padding:10px 75px 75px;
+  padding: 10px 75px 75px;
   width: 600px;
   max-width: 80%;
   display: flex;
@@ -552,10 +551,11 @@ label {
     flex-direction: column;
     margin: 10px;
   }
-  .project_info-container-heading {
+  .project_info-container-heading,
+  .project_info-container-p {
     display: none;
   }
-  .project_list {
+  .project_info-container-p .project_list {
     display: none;
   }
 
