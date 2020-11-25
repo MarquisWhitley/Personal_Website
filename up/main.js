@@ -11,7 +11,6 @@ const aboutMeRightButton = document.querySelector('.right-arrow2');
 const moreProjectsRightButton = document.querySelector('.right-arrow3');
 
 const submit = document.querySelector('.form-submitted');
-const message = document.querySelector('.contact_message');
 
 const form = document.querySelector('.contact_form');
 form.addEventListener('submit', (e) => submitForm(e));
@@ -102,24 +101,14 @@ const contactLeft = async () => {
   showButtons('clicked', aboutMeRightButton);
 };
 
-const submitForm = async (e) => {
-  const name = document.querySelector('.contact_name');
-  const email = document.querySelector('.contact_email');
-  if (name.value.length === 0) {
-    e.preventDefault();
-    alert('Please enter your name.');
-    return;
-  }
-  if (email.value.length === 0) {
-    e.preventDefault();
-    alert('Please enter your email.');
-    return;
-  }
-  if (message.value.length === 0) {
-    e.preventDefault();
-    alert('Please enter a message.');
-    return;
-  }
+const submitForm = (e) => {
+  const el = document.querySelectorAll('.user');
+  el.forEach((val) => {
+    if (val.value === '') {
+      e.preventDefault();
+      alert(`Please enter your ${val.name}`);
+    }
+  });
 };
 
 // const scrollableElement = document.body;
