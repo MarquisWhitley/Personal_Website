@@ -124,7 +124,7 @@ hr {
 }
 
 .section1_about-content {
-  padding: 30px;
+  padding: 0 15px 15px;
 }
 
 .icons {
@@ -136,7 +136,8 @@ hr {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 50%;
-  border: 1px solid green;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
 }
 
 .icons a {
@@ -197,7 +198,7 @@ i:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  top: 0;
+  top: 2%;
   right: -100%;
   -webkit-transition: 900ms ease-in;
   transition: 900ms ease-in;
