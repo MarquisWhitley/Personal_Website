@@ -1,21 +1,22 @@
 /* Reset */
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 /* Utilities */
 :root {
   --standard-font: 'Source Code Pro', monospace;
-
   --title-font: 'Underdog', cursive;
-
   --primary-color: #2bae66ff;
-
   --primary-color-o: rgba(43, 174, 102, 0.329);
-
   --secondary-color: #fcf6f5ff;
 }
 html,
@@ -65,13 +66,7 @@ hr {
   background-color: transparent;
   padding: 40px;
 }
-#main2 {
-  position: fixed;
-  height: 92vh;
-  width: 60vw;
-  background-color: transparent;
-  padding: 0px 40px 40px 40px;
-}
+#main2,
 #main4 {
   position: fixed;
   height: 92vh;
@@ -110,9 +105,9 @@ hr {
   justify-content: space-evenly;
   width: 50%;
   border: 1px solid green;
-}
-.icons a {
-  font-size: calc(1vw + 15px);
+  a {
+    font-size: calc(1vw + 15px);
+  }
 }
 i {
   transition: 900ms cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -142,15 +137,7 @@ i:hover {
   font-size: calc(1vw + 0.6rem);
 }
 /********************* Projects Sections ********************/
-.section2 {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  top: 0;
-  right: -100%;
-  transition: 900ms ease-in;
-}
+.section2,
 .section4 {
   display: flex;
   justify-content: space-evenly;
@@ -183,11 +170,11 @@ i:hover {
   flex-direction: column;
   margin: 0 30px;
 }
-.project_info-container h3 {
-  margin: 10px 0;
-  font-size: calc(0.6vw + 0.66rem);
-}
 .project_info-container {
+  h3 {
+    margin: 10px 0;
+    font-size: calc(0.6vw + 0.66rem);
+  }
   flex-grow: 2;
   display: flex;
   flex-direction: column;
@@ -230,7 +217,6 @@ img {
   margin-right: 5px;
   cursor: pointer;
 }
-
 #shape {
   stroke-width: 6px;
   fill: transparent;
@@ -242,12 +228,12 @@ img {
 #text {
   margin-top: -35px;
   text-align: center;
-}
-#text a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  font-weight: 100;
-  font-size: 1.5em;
+  a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.5em;
+  }
 }
 .svg-wrapper:hover #shape {
   fill: var(--primary-color-o);
@@ -256,7 +242,6 @@ img {
   stroke-dashoffset: 0;
   stroke: var(--primary-color);
 }
-
 /* Project hover */
 .contianer {
   height: 100%;
@@ -268,33 +253,37 @@ img {
   width: 18vw;
   position: relative;
   height: 100%;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    opacity: 1;
+    transition: transform ease-out 250ms;
+  }
+  &::before {
+    top: 1em;
+    left: 1em;
+    right: 1em;
+    border-top: 3px solid var(--primary-color);
+    transform: scale(0, 1);
+    transform-origin: left;
+  }
 }
-.card::before,
-.card::after {
-  content: '';
-  position: absolute;
-  opacity: 1;
-  transition: transform ease-out 250ms;
-}
-.card::before {
-  top: 1em;
-  left: 1em;
-  right: 1em;
-  border-top: 3px solid var(--primary-color);
-  transform: scale(0, 1);
-  transform-origin: left;
-}
-.card::after {
-  bottom: 1em;
-  left: 1em;
-  right: 1em;
-  border-bottom: 3px solid var(--primary-color);
-  transform: scale(0, 1);
-  transform-origin: right;
-}
-.card:hover::before,
-.card:hover::after {
-  transform: scale(1, 1);
+.card {
+  &::after {
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    border-bottom: 3px solid var(--primary-color);
+    transform: scale(0, 1);
+    transform-origin: right;
+  }
+  &:hover {
+    &::before,
+    &::after {
+      transform: scale(1, 1);
+    }
+  }
 }
 .card__img {
   width: 100%;
@@ -320,9 +309,7 @@ img {
 .card:hover .card__text {
   opacity: 1;
 }
-.card__title {
-  font-size: 2rem;
-}
+.card__title,
 .card__body {
   font-size: 2rem;
 }
@@ -341,10 +328,10 @@ img {
   left: -100%;
   transition: 900ms ease-in;
   padding: 40px;
-}
-.contact h1 {
-  font-size: calc(0.71vw + 1.5rem);
-  margin-bottom: 20px;
+  h1 {
+    font-size: calc(0.71vw + 1.5rem);
+    margin-bottom: 20px;
+  }
 }
 form {
   display: flex;
@@ -360,9 +347,9 @@ form {
   height: 30px;
   width: 100%;
   border-radius: 10px;
-}
-.form-btn:hover {
-  background-color: var(--primary-color-o);
+  &:hover {
+    background-color: var(--primary-color-o);
+  }
 }
 label {
   font-family: var(--title-font);
@@ -396,10 +383,10 @@ label {
   border: 2px solid var(--primary-color);
   font-size: calc(0.5vw + 0.5rem);
   background-color: transparent;
-}
-.contact_message:focus {
-  outline: solid 2px rgb(19, 255, 145);
-  background-color: var(--primary-color-o);
+  &:focus {
+    outline: solid 2px rgb(19, 255, 145);
+    background-color: var(--primary-color-o);
+  }
 }
 /******************** Arrows ********************/
 .right-arrow,
@@ -451,7 +438,6 @@ label {
   top: 50%;
   left: 2%;
 }
-
 /* Popup Modal */
 .modal {
   position: fixed;
@@ -473,9 +459,10 @@ label {
   max-width: 80%;
   display: flex;
   flex-direction: column;
-}
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
+
+  &.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 .modal-header {
   padding: 10px 15px;
@@ -484,18 +471,20 @@ label {
   align-items: center;
   border-bottom: 1px solid black;
 }
-.modal-header .title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-.modal-header .close-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: var(--secondary-color);
+.modal-header {
+  .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
 }
 .modal-body {
   padding: 10px 15px;
@@ -511,12 +500,11 @@ label {
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   z-index: 9;
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
-#overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
 @media screen and (max-height: 675px) {
   .icons {
     display: none;
@@ -532,11 +520,15 @@ label {
   .left-arrow,
   .left-arrow2,
   .right-arrow2,
-  .right-arrow3,
-  .right-arrow {
+  .right-arrow3 {
     font-size: 1.5rem;
   }
-  .right-arrow h2,
+  .right-arrow {
+    font-size: 1.5rem;
+    h2 {
+      font-size: 0.75rem;
+    }
+  }
   .left-arrow2 h2,
   .left-arrow h2,
   .right-arrow2 h2,
@@ -551,19 +543,19 @@ label {
     flex-direction: column;
     margin: 10px;
   }
-  .project_info-container-heading,
+  .project_info-container-heading {
+    display: none;
+  }
   .project_info-container-p {
     display: none;
+    .project_list {
+      display: none;
+    }
   }
-  .project_info-container-p .project_list {
-    display: none;
-  }
-
   .card {
     width: 200px;
   }
 }
-
 @media screen and (max-width: 500px) {
   #heading {
     position: fixed;
