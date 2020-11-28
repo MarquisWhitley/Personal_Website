@@ -57,7 +57,11 @@ hr {
 
 /* Miscellaneous */
 .special {
-  color: var(--primary-color);
+  color: #1f874e;
+}
+
+.hide {
+  display: none;
 }
 
 /* Title */
@@ -256,6 +260,7 @@ i:hover {
 }
 
 .project_info-container {
+  color: #949494;
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
@@ -279,7 +284,12 @@ i:hover {
   font-size: calc(0.6vw + 0.66rem);
 }
 
+.project_info-container p {
+  color: #66776b;
+}
+
 .project_info-heading {
+  color: #949494;
   margin-top: 10px;
   text-align: center;
   font-size: calc(1.1vw + 0.75rem);
