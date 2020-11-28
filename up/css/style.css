@@ -26,6 +26,7 @@ html,
 body {
   font-family: var(--standard-font);
   color: var(--secondary-color);
+  overflow: hidden;
 }
 
 h1,
@@ -61,7 +62,7 @@ hr {
 
 /* Title */
 #heading {
-  position: fixed;
+  position: absolute;
   top: 2%;
   left: 40%;
   font-family: var(--title-font);
@@ -72,7 +73,7 @@ hr {
 
 /* Containers */
 #main {
-  position: fixed;
+  position: absolute;
   height: 85vh;
   width: 45vw;
   background-color: transparent;
@@ -81,7 +82,7 @@ hr {
 
 #main2,
 #main4 {
-  position: fixed;
+  position: absolute;
   height: 92vh;
   width: 60vw;
   background-color: transparent;
