@@ -1,8 +1,14 @@
 const projects = document.querySelector('.section2');
 const more = document.querySelector('.section4');
 const aboutMe = document.querySelector('.section1');
+const aboutMeSection = document.querySelector('#aboutme_popup');
 const heading = document.querySelector('#heading');
 const contact = document.querySelector('.contact');
+
+const nav = document.querySelector('.navbars');
+const icons = document.querySelector('.icons');
+const showHome = document.querySelector('.show-home');
+const showAbout = document.querySelector('.show-about');
 
 const projectsRightButton = document.querySelector('.right-arrow');
 const aboutMeLeftButton = document.querySelector('.left-arrow');
@@ -24,33 +30,49 @@ contactLeftButton.addEventListener('click', () => contactLeft());
 const delay = async (delay) =>
   await new Promise((resolve, reject) => setTimeout(resolve, delay));
 
-let currentHeading = 40;
-let currentAboutMeL = 28;
+let currentAboutMeL = 38;
 
 if (document.body.clientWidth < 500) {
-  currentHeading = 28;
   currentAboutMeL = 19;
 }
 const hideButtons = (...args) => {
-  args.forEach((vals) => (vals.style.visibility = 'hidden'));
+  args.forEach((vals) => {
+    vals.style.pointerEvents = 'none';
+    vals.style.visibility = 'hidden';
+  });
 };
 const showButtons = (classes, ...args) => {
   args.forEach((vals) => {
     vals.style.visibility = 'visible';
+    vals.style.pointerEvents = 'auto';
     vals.classList.remove(classes);
   });
 };
 const addClass = (classes, ...args) => {
   args.forEach((vals) => vals.classList.add(classes));
 };
+showAbout.addEventListener('click', async () => {
+  addClass('clicked', aboutMe);
+  await delay(500);
+  hideButtons(aboutMe);
+  await delay(500);
+  showButtons('clicked', showHome, aboutMeSection);
+});
+showHome.addEventListener('click', async () => {
+  addClass('clicked', showHome, aboutMeSection);
+  await delay(500);
+  hideButtons(showHome, aboutMeSection);
+  await delay(500);
+  showButtons('clicked', aboutMe);
+});
 
 const projectsRight = async () => {
-  addClass('clicked', projectsRightButton, contactLeftButton);
+  addClass('clicked', projectsRightButton, contactLeftButton, icons, nav);
   await delay(500);
-  hideButtons(projectsRightButton, contactLeftButton);
+  hideButtons(projectsRightButton, contactLeftButton, icons, nav);
   projects.style.right = '19%';
   aboutMe.style.left = '-100%';
-  heading.style.left = '-100%';
+  aboutMeSection.style.left = '-100%';
   await delay(500);
   showButtons('clicked', aboutMeLeftButton, moreProjectsRightButton);
 };
@@ -69,9 +91,9 @@ const aboutMeRight = async () => {
   hideButtons(aboutMeRightButton);
   contact.style.left = '-100%';
   aboutMe.style.left = `${currentAboutMeL}%`;
-  heading.style.left = `${currentHeading}%`;
+  aboutMeSection.style.left = '28%';
   await delay(500);
-  showButtons('clicked', projectsRightButton, contactLeftButton);
+  showButtons('clicked', projectsRightButton, contactLeftButton, icons, nav);
 };
 
 const aboutMeLeft = async () => {
@@ -81,22 +103,22 @@ const aboutMeLeft = async () => {
   projects.style.right = '-100%';
   more.style.right = '-200%';
   aboutMe.style.left = `${currentAboutMeL}%`;
-  heading.style.left = `${currentHeading}%`;
+  aboutMeSection.style.left = '28%';
   await delay(900);
-  showButtons('clicked', contactLeftButton, projectsRightButton);
+  showButtons('clicked', contactLeftButton, projectsRightButton, icons, nav);
 };
 
 const contactLeft = async () => {
-  addClass('clicked', projectsRightButton, contactLeftButton);
+  addClass('clicked', projectsRightButton, contactLeftButton, icons, nav);
   await delay(500);
-  hideButtons(projectsRightButton, contactLeftButton);
+  hideButtons(projectsRightButton, contactLeftButton, icons, nav);
   if (document.body.clientWidth < 600) {
     contact.style.left = '10%';
   } else {
     contact.style.left = '27%';
   }
   aboutMe.style.left = '200%';
-  heading.style.left = '200%';
+  aboutMeSection.style.left = '200%';
   await delay(500);
   showButtons('clicked', aboutMeRightButton);
 };

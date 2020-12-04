@@ -50,85 +50,96 @@
       href="./favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/vhs.min.css"
+    />
 
     <title>Whitley Tech | Marquis Whitley</title>
   </head>
   <body>
     <div id="particles-js"></div>
-    <header id="heading">
-      <h1>
-        <span class="heading">Marquis</span>|<span class="special"
-          >Whitley</span
-        >
-      </h1>
-    </header>
 
-    <div id="main" class="section1">
+    <div class="navbars">
+      <div class="svg-wrapper show-home">
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape" height="40" width="150" />
+          <div id="text">
+            <a rel="noopener" href="#">
+              <span class="spot"></span>
+              Home
+            </a>
+          </div>
+        </svg>
+      </div>
+      <div class="svg-wrapper show-about">
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape" height="40" width="150" />
+          <div id="text">
+            <a rel="noopener" href="#">
+              <span class="spot"></span>
+              About Me
+            </a>
+          </div>
+        </svg>
+      </div>
+      <div data-modal-target="#skills-modal" class="svg-wrapper">
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape" height="40" width="150" />
+          <div id="text">
+            <a rel="noopener" href="#">
+              <span class="spot"></span>
+              Skills
+            </a>
+          </div>
+        </svg>
+      </div>
+    </div>
+
+    <div id="aboutme_popup">
       <div class="container_about">
         <h1 class="section1_heading">About Me</h1>
-        <div class="section1_about-content">
-          <p class="section1_p">
-            Hello, My name is <span class="special">Marquis Whitley</span> and
-            I'm a Self-Taught Software Engineer. I specialize in creating apps
-            that have unique <span class="special">functionality</span> and
-            provides the most optimal solutions for different problems. My
-            knowledge and proficieny in
-            <span class="special">Data Structures and Algorithms</span> helps me
-            solve complex problems in the most efficient way.
-          </p>
-        </div>
       </div>
-      <div class="icons">
-        <a
-          rel="noopener"
-          href="https://github.com/MarquisWhitley"
-          target="_blank"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a
-          rel="noopener"
-          href="https://www.linkedin.com/in/marquis-whitley/"
-          target="_blank"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a
-          rel="noopener"
-          href="https://www.facebook.com/marquis.whitley.71/"
-          target="_blank"
-          ><i class="fab fa-facebook"></i
-        ></a>
-        <a rel="noopener" href="mailto:whitley.tech@yahoo.com" target="_top"
-          ><i class="fas fa-envelope"></i
-        ></a>
+      <div class="section1_about-content">
+        <p class="section1_p">
+          Hello, My name is <span class="special">Marquis Whitley</span> and I'm
+          a Self-Taught Software Engineer. I specialize in creating apps that
+          have unique <span class="special">functionality</span> and provides
+          the most optimal solutions for different problems. My knowledge and
+          proficieny in
+          <span class="special">Data Structures and Algorithms</span> helps me
+          solve complex problems in the most efficient way.
+        </p>
       </div>
-
-      <div class="container_skills">
-        <h2 class="section1_skills">Skills</h2>
-        <div class="skills">
-          <div class="languages">
-            <h3 class="languages_heading">Languages</h3>
-            <ul>
-              <li>JavaScript (ES6+)</li>
-              <li>React</li>
-              <li>TypeScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>LaTeX</li>
-            </ul>
-          </div>
-          <div class="tools">
-            <h3 class="tools_heading">Tools</h3>
-            <ul>
-              <li>Git</li>
-              <li>Netlify</li>
-              <li>Webpack</li>
-              <li>Node</li>
-              <li>AJAX</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+    </div>
+    <div class="icons">
+      <a rel="noopener" href="https://github.com/MarquisWhitley" target="_blank"
+        ><i class="fab fa-github"></i
+      ></a>
+      <a
+        rel="noopener"
+        href="https://www.linkedin.com/in/marquis-whitley/"
+        target="_blank"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a
+        rel="noopener"
+        href="https://www.facebook.com/marquis.whitley.71/"
+        target="_blank"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a rel="noopener" href="mailto:whitley.tech@yahoo.com" target="_top"
+        ><i class="fas fa-envelope"></i
+      ></a>
+    </div>
+    <div id="main" class="section1">
+      <header id="heading">
+        <h1>
+          <span class="heading">Marquis</span>|<span class="special"
+            >Whitley</span
+          >
+        </h1>
+      </header>
       <div class="container_resume">
         <div class="svg-wrapper">
           <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
@@ -186,7 +197,7 @@
                 in order to see how the most popular problem solving patterns
                 work in a visual perspective.
               </p>
-              <div data-modal-target="#modal" class="svg-wrapper">
+              <div data-modal-target="#modal" class="svg-wrapper more">
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                   <rect id="shape" height="40" width="150" />
                   <div id="text">
@@ -216,7 +227,7 @@
                 hireable, how many followers, who they are following and more
                 info relating to their github account.
               </p>
-              <div data-modal-target="#modal2" class="svg-wrapper">
+              <div data-modal-target="#modal2" class="svg-wrapper more">
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                   <rect id="shape" height="40" width="150" />
                   <div id="text">
@@ -303,7 +314,7 @@
                 created on my journey. This website shows off my understanding
                 of the web design fundamentals.
               </p>
-              <div data-modal-target="#modal3" class="svg-wrapper">
+              <div data-modal-target="#modal3" class="svg-wrapper more">
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                   <rect id="shape" height="40" width="150" />
                   <div id="text">
@@ -332,7 +343,7 @@
                 completed. There is a limit to how many tasks you can have
                 available at once.
               </p>
-              <div data-modal-target="#modal4" class="svg-wrapper">
+              <div data-modal-target="#modal4" class="svg-wrapper more">
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                   <rect id="shape" height="40" width="150" />
                   <div id="text">
@@ -431,6 +442,40 @@
             Taught me how to display messages from your inputfield to the HTML
           </li>
         </ul>
+      </div>
+    </div>
+    <div id="skills-modal" class="modal">
+      <div class="modal-header">
+        <div class="title"></div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="container_skills">
+          <h2 class="section1_skills">Skills</h2>
+          <div class="skills">
+            <div class="languages">
+              <h3 class="languages_heading">Languages</h3>
+              <ul>
+                <li>JavaScript (ES6+)</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>LaTeX</li>
+              </ul>
+            </div>
+            <div class="tools">
+              <h3 class="tools_heading">Tools</h3>
+              <ul>
+                <li>Git</li>
+                <li>Netlify</li>
+                <li>Webpack</li>
+                <li>Node</li>
+                <li>AJAX</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div id="overlay"></div>
