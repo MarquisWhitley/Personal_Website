@@ -51,14 +51,16 @@ const showButtons = (classes, ...args) => {
 const addClass = (classes, ...args) => {
   args.forEach((vals) => vals.classList.add(classes));
 };
-showAbout.addEventListener('click', async () => {
+showAbout.addEventListener('click', async (e) => {
+  e.preventDefault();
   addClass('clicked', aboutMe);
   await delay(500);
   hideButtons(aboutMe);
   await delay(500);
   showButtons('clicked', showHome, aboutMeSection);
 });
-showHome.addEventListener('click', async () => {
+showHome.addEventListener('click', async (e) => {
+  e.preventDefault();
   addClass('clicked', showHome, aboutMeSection);
   await delay(500);
   hideButtons(showHome, aboutMeSection);
