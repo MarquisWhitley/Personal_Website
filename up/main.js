@@ -51,22 +51,26 @@ const showButtons = (classes, ...args) => {
 const addClass = (classes, ...args) => {
   args.forEach((vals) => vals.classList.add(classes));
 };
-showAbout.addEventListener('click', async (e) => {
+showAbout.addEventListener('click', (e) => aboutMePopup(e));
+showHome.addEventListener('click', (e) => showHomePopup(e));
+
+const aboutMePopup = async (e) => {
   e.preventDefault();
   addClass('clicked', aboutMe);
   await delay(500);
   hideButtons(aboutMe);
   await delay(500);
   showButtons('clicked', showHome, aboutMeSection);
-});
-showHome.addEventListener('click', async (e) => {
+};
+
+const showHomePopup = async (e) => {
   e.preventDefault();
   addClass('clicked', showHome, aboutMeSection);
   await delay(500);
   hideButtons(showHome, aboutMeSection);
   await delay(500);
   showButtons('clicked', aboutMe);
-});
+};
 
 const projectsRight = async () => {
   addClass('clicked', projectsRightButton, contactLeftButton, icons, nav);
@@ -134,40 +138,6 @@ const submitForm = (e) => {
     }
   });
 };
-
-// const scrollableElement = document.body;
-// let position = 0;
-
-// const checkScrollDirection = (event) => {
-//   if (checkScrollDirectionIsUp(event)) {
-//     console.log('UP');
-//     position--;
-//   }
-//   if (!checkScrollDirectionIsUp(event)) {
-//     console.log('Down');
-//     position++;
-//   }
-//   if (position >= 3) {
-//     return;
-//   }
-//   if (position <= -1) {
-//     return;
-//   }
-//   console.log(position);
-// };
-
-// const checkPos = () => {
-//   // if(position = 1) console.log(position)
-//   if ((position = 2)) console.log(`this is position ${position}`);
-// };
-
-// const checkScrollDirectionIsUp = (event) => {
-//   if (event.wheelDelta) {
-//     return event.wheelDelta > 0;
-//   }
-//   return event.deltaY < 0;
-// };
-// scrollableElement.addEventListener('wheel', checkScrollDirection);
 
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
