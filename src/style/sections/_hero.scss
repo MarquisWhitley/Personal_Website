@@ -21,6 +21,10 @@
   background-position: center;
   background-size: cover; */
 
+  .fa-check{
+    color: rgb(0, 163, 0);
+  }
+
   @include respond(phone) {
     padding: 0rem $default-font-size;
   }
